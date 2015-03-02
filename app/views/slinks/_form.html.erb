@@ -1,0 +1,21 @@
+<%= form_for(@slink) do |f| %>
+  <% if @slink.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@slink.errors.count, "error") %> prohibited this slink from being saved:</h2>
+
+      <ul>
+      <% @slink.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_area :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Listing slinks</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slinks.each do |slink| %>
+      <tr>
+        <td><%= slink.url %></td>
+        <td><%= link_to 'Show', slink %></td>
+        <td><%= link_to 'Edit', edit_slink_path(slink) %></td>
+        <td><%= link_to 'Destroy', slink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slink', new_slink_path %>
